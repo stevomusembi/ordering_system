@@ -71,6 +71,10 @@ export class DashboardComponent implements OnInit {
           order.status = 'DUPLICATE';
           this.loading = true;
           setTimeout(() => { this.orders.push(order); this.loading = false; }, 2500);
+        } else {
+          console.log('Order canceled');
+          this.loading = false;
+          return;
         }
       } else {
         order.status = 'PENDING';
