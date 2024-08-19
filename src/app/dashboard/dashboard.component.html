@@ -1,0 +1,70 @@
+<div class="dashboard-container">
+    <div class="user-actions">
+        <button mat-raised-button color="primary" type="button" (click)="logout()"> Logout</button>
+
+    </div>
+    <div class="welcome-area">
+        <div class="welcome-message">
+            <span>Hello <fa-icon [icon]="faHandWave"></fa-icon> <strong> Steven</strong>
+                welcome back</span>
+        </div>
+        <div class="balance-info">
+            <span>Your current balance is <strong class="balance-amount">Ksh {{accountBalance}}</strong></span>
+        </div>
+    </div>
+
+    <div class="card ">
+        <div class="listing-top">
+            <h2>Recent orders</h2>
+
+            <button mat-raised-button color="primary" (click)="openOrderModal()">Place new Order</button>
+        </div>
+        <div class="donut-div" *ngIf="loading">
+            <div class="donut"></div>
+        </div>
+        <div *ngIf="!loading">
+
+            <table class="table" *ngIf="orders.length">
+                <thead>
+                    <tr>
+                        <th scope="col" data-toggle="modal" data-target="#orderModal">Order number</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Product</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Actions</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="table-row" *ngFor="let order of orders">
+                        <td class="table-index">{{ order.orderNumber }}</td>
+                        <td class="">{{ order.date | date: 'MMM d, y, h:mm a' }}</td>
+                        <td class="">{{ order.productName }}</td>
+                        <td class="">{{ order.quantity }}</td>
+                        <td class=""> <span class="badge" [ngClass]="{
+                          'badge-warning': order.status === 'PENDING',
+                          'badge-success': order.status === 'DELIVERED',
+                          'badge-danger': order.status === 'DUPLICATE'
+                        }"> {{ order.status }}</span> </td>
+                        <td class="">{{ order.totalPrice }}</td>
+                        <td class="">
+                            <span class="table-actions">
+                                <!-- <fa-icon [icon]="faEye"></fa-icon> -->
+                                <!-- <fa-icon [icon]="faPencil"></fa-icon> -->
+                                <fa-icon [icon]="faTrash" (click)="deleteOrder(order)"></fa-icon>
+                            </span>
+                        </td>
+                    </tr>
+                </tbody>
+
+            </table>
+
+            <div class="no-results" *ngIf="!orders.length">
+                <p>No orders found</p>
+            </div>
+        </div>
+
+    </div>
+</div>

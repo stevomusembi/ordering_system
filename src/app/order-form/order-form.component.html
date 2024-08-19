@@ -1,0 +1,36 @@
+<h2 mat-dialog-title>Order request</h2>
+<mat-dialog-content>
+  <form [formGroup]="orderForm">
+    <mat-form-field appearance="fill">
+      <mat-label>Select Product</mat-label>
+      <mat-select formControlName="product">
+        <mat-option *ngFor="let product of products" [value]="product">
+          {{product.name}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill">
+      <mat-label>Select Quantity</mat-label>
+      <mat-select formControlName="quantity" >
+        <mat-option *ngFor="let q of selectedProduct?.quantities" [value]="q.size">
+          {{q.size}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="narration-area">
+      <mat-label>Write a note</mat-label>
+      <textarea matInput formControlName="narration" rows="4" maxlength="45"></textarea>
+      <mat-hint align="end">{{orderForm.get('narration')!.value?.length || 0}} / 45</mat-hint>
+    </mat-form-field>
+
+    <div *ngIf="totalPrice > 0" class="total-price">
+      Total Price: Ksh {{totalPrice}}
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="orderForm.invalid">Submit</button>
+</mat-dialog-actions>

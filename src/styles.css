@@ -1,1 +1,139 @@
 /* You can add global styles to this file, and also import other style files */
+
+
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.card {
+    border: none;
+    background-color: #fff !important;
+    margin: 20px 0;
+    border-radius: 8px !important;
+    min-height: 300px;
+    padding: 20px;
+}
+
+.table {
+    width: 90%;
+    border-collapse: collapse;
+    margin-top: 50px !important;
+    margin: 0 auto;
+    min-height: 100px;
+    max-width: 1440px;
+}
+
+.table thead th {
+    border-top: none;
+    color: #80868b;
+    font-size: 0.9rem;
+    white-space: nowrap !important;
+    text-align: left;
+}
+
+.table tbody tr:hover {
+    background-color: #f1f1f133;
+}
+
+
+.table tbody tr:hover .redirect-link {
+    text-decoration: underline;
+}
+
+.table tbody .no-hover-effect:hover {
+    background-color: transparent !important;
+}
+
+.table tbody td {
+    color: #5f6063;
+    font-size: 0.9rem;
+    width: 100px;
+    padding: 10px 0;
+}
+
+.table tbody td .redirect-link {
+    color: #50676c;
+    text-decoration: none;
+    cursor: pointer;
+    font-weight: 600;
+}
+
+.table tbody td .word-break {
+    word-break: break-all !important;
+}
+
+.table tbody td .badge {
+    border-radius: 20px;
+    padding: 7px 12px !important;
+    vertical-align: middle;
+    font-size: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+.table-row {
+    margin-bottom: 10px !important;
+}
+
+
+
+
+
+.badge {
+    text-transform: uppercase;
+    font-size: 13px !important;
+}
+
+.badge-danger {
+    background-color: #f3d1d1;
+    color: #a90909;
+}
+
+.badge-success {
+    background-color: #adf0cc;
+    color: #14713f;
+}
+
+.badge-secondary {
+    background-color: #f1f1f1;
+    color: #5f6063;
+}
+
+.badge-primary {
+    background-color: #b3e4f5;
+    color: #11637e;
+}
+
+.badge-warning {
+    background-color: #fff2de;
+    color: #a76807;
+}
+.donut-div{
+    display: flex;
+    justify-content: center;
+}
+.donut {
+    width: 3rem;
+    height: 3rem;
+    margin: 2rem;
+    border-radius: 50%;
+    border: 0.3rem solid #003d4c44;
+    border-top-color: #003d4c;
+    animation: 1.5s spin infinite linear;
+  
+    &.multi {
+      border-bottom-color: #003d4c;
+    }
+  }
+  
+  @keyframes spin {
+    to {
+      transform: rotate(360deg);
+    }
+  }

@@ -1,0 +1,74 @@
+.dashboard-container {
+    height: 100vh;
+    background-color: #f1f1f1;
+    padding: 50px;
+
+
+}
+
+.user-actions {
+    display: flex;
+    justify-content: right;
+}
+
+.welcome-area {
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.welcome-message {
+    font-size: 1rem;
+    color: #5f6065;
+
+}
+
+.balance-info {
+    font-size: 1.2rem;
+    color: #5f6065;
+}
+
+.balance-amount {
+    color: #62d862;
+}
+
+.welcome-message fa-icon {
+    color: rgb(214, 214, 12) !important;
+    background: #fff;
+    border-radius: 50%;
+    padding: 5px;
+}
+
+.listing-top {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 0 40px;
+    align-items: center;
+}
+
+.table-actions {
+    display: flex;
+    /* justify-content: space-around; */
+}
+
+.table-actions fa-icon {
+    margin-right: 15px;
+    cursor: pointer;
+    color: #3f51b3;
+}
+
+.table-index {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.no-results{
+    margin-top:30px;
+    display: flex;
+    justify-content: center;
+    color: #5f6063;
+
+}
