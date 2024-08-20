@@ -16,7 +16,7 @@ export class LoginComponent implements OnInit {
   faEyeSlash = faEyeSlash;
   userEmail = 'admin@admin.com';
   userPassword= 'admin@123'
-  error = false;
+  error = false
 
   ngOnInit(): void {
   }
@@ -32,16 +32,16 @@ export class LoginComponent implements OnInit {
   onSubmit() {
     if (this.loginForm.valid) {
       console.log('Form submitted', this.loginForm.value);
-      if(this.loginForm.value.email === this.userEmail && this.loginForm.value.password === this.userPassword){
+      // if(this.loginForm.value.email === this.userEmail && this.loginForm.value.password === this.userPassword){
         this.router.navigate(['dashboard']);
-      } else {
-        this.error = true;
-      }
+      // } else {
+      //   this.error = true;
+      //   alert('Invalid Credentials');
+      // }
     }
   }
 
   togglePasswordVisibility() {
-    console.log(this.hidePassword);
     this.hidePassword = !this.hidePassword;
   }
 }
