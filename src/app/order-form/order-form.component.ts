@@ -4,7 +4,7 @@ import { MatDialogRef } from '@angular/material/dialog';
 interface Product {
   id: number;
   name: string;
-  quantities: { size: string, price: number }[];
+  quantities: { size: string, price: number,quantity:any }[];
 }
 @Component({
   selector: 'app-order-form',
@@ -33,36 +33,45 @@ export class OrderFormComponent implements OnInit {
 
   }
 
+ 
   products: Product[] = [
     {
-      id: 1,
-      name: 'Bricks',
-      quantities: [
-        { size: '50 kg', price: 2000 },
-        { size: '100 kg', price: 1200 },
-        { size: '300 kg', price: 5000 }
-      ]
+    id: 1,
+    name: 'Scratch Cards',
+    quantities: [
+    { size: '100', price: 1000, quantity: 10 },
+    { size: '250', price: 250, quantity: 20 },
+    { size: '500', price: 500, quantity: 40 },
+    { size: '1000', price: 1000, quantity: 70 }
+    ]
     },
     {
-      id: 2,
-      name: 'Construction Nails',
-      quantities: [
-        { size: '3 boxes', price: 1500 },
-        { size: '6 boxes', price: 4000 },
-        { size: '12 boxes', price: 15000 }
-      ]
+    id: 2,
+    name: 'Phones',
+    quantities: [
+    { size: '3 boxes', price: 30000, quantity: 3 },
+    { size: '5 boxes', price: 40000, quantity: 5 },
+    { size: '7 boxes', price: 50000, quantity: 5 }
+    ]
     },
     {
-      id: 3,
-      name: 'Paint',
-      quantities: [
-        { size: '50 litres', price: 1800 },
-        { size: '200 litres', price: 2500 },
-        { size: '500 litres', price: 5800 }
-      ]
+    id: 3,
+    name: 'Powerbanks',
+    quantities: [
+    { size: '10 pieces', price: 10000, quantity: 10 },
+    { size: '5 pieces', price: 5000, quantity: 5 }
+    ]
+    },
+    {
+    id: 4,
+    name: 'Earphones',
+    quantities: [
+    { size: '3 pieces', price: 1000, quantity: 3 },
+    { size: '5 pieces', price: 1500, quantity: 5 },
+    { size: '10 pieces', price: 3000, quantity: 10 }
+    ]
     }
-  ];
-
+    ];
   narration: string = '';
 
   constructor(public dialogRef: MatDialogRef<OrderFormComponent>, private fb: FormBuilder) { }

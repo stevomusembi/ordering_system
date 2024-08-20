@@ -18,6 +18,7 @@ import {MatCardModule} from '@angular/material/card';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatSelectModule} from '@angular/material/select';
+import{MatTabsModule} from '@angular/material/tabs';
 
 
 @NgModule({
@@ -42,7 +43,8 @@ import {MatSelectModule} from '@angular/material/select';
     MatCardModule,
     MatDialogModule,
     MatFormFieldModule,
-    MatSelectModule
+    MatSelectModule,
+    MatTabsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

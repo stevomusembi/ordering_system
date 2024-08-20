@@ -1,1 +1,33 @@
-<p>order-list works!</p>
+<h2 mat-dialog-title>Top up balance</h2>
+<mat-dialog-content>
+  <form [formGroup]="topUpForm" class="top-up-form">
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Select top up option</mat-label>
+      <mat-select formControlName="paymentOption">
+        <mat-option *ngFor="let option of paymentOptions" [value]="option">
+          {{option}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Enter Amount</mat-label>
+      <input matInput type="number" formControlName="amount">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width">
+      <mat-label>Confirmation Message</mat-label>
+      <input matInput formControlName="confirmationMessage">
+    </mat-form-field>
+
+    <mat-form-field appearance="fill" class="full-width narration-area">
+      <mat-label>Write a note</mat-label>
+      <textarea matInput formControlName="narration" rows="4" maxlength="45"></textarea>
+      <mat-hint align="end">{{topUpForm.get('narration')!.value?.length || 0}} / 45</mat-hint>
+    </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()">Cancel</button>
+  <button mat-raised-button color="primary" (click)="onSubmit()" [disabled]="topUpForm.invalid">Submit</button>
+</mat-dialog-actions>
